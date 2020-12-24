@@ -1,0 +1,10 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.signup button:hover {
+    cursor: pointer;
+}

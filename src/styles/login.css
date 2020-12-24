@@ -1,0 +1,10 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.login button:hover {
+    cursor: pointer;
+}
