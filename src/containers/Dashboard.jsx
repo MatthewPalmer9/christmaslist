@@ -8,4 +8,5 @@ export default function Dashboard(props) {
         <>
             <div>Hello from Dashboard</div>
         </>
+    )
 }
