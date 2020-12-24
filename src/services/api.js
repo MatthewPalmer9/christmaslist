@@ -49,3 +49,15 @@ const deleteUser = user_id => {
         headers: headers(),
     }).then(resp => resp.json());
 };
+
+export const api = {
+    auth: {
+        login,
+        getCurrentSession,
+    },
+    user: {
+        newUser,
+        updateUser,
+        deleteUser,
+    }
+}
