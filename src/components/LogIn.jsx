@@ -30,8 +30,14 @@ export default class LogIn extends Component {
             localStorage.setItem('token', data.jwt)
             localStorage.setItem('user', data.user.username)
             localStorage.setItem('userEmail', data.user.email)
-            console.log(this.props.login(data))
+            this.props.login(data)
         })
+        this.setState({
+            email: "",
+            password: ""
+        });
+        const inputVal = document.querySelectorAll("input");
+        inputVal.forEach((input) => input.value = "");
     }
 
 
