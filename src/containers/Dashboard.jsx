@@ -1,8 +1,6 @@
 import React from 'react';
 
-export default function Dashboard(props) {
-
-    const { authUser } = props;
+export default function Dashboard() {
 
     return (
         <>

@@ -29,7 +29,7 @@
     border-radius: 5px;
     box-shadow: inset 0px 0px 0px 2px rgb(170, 0, 0);
     background-color: white;
-    transition: 600ms;
+    transition: 400ms;
 }
         #logout:hover {
             cursor: pointer;

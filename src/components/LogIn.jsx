@@ -3,7 +3,6 @@ import { api } from '../services/api.js';
 import "../styles/login.css";
 
 export default class LogIn extends Component {
-
     constructor() {
         super()
         this.state = {
@@ -12,7 +11,10 @@ export default class LogIn extends Component {
         }
     }
 
-    
+    redirect = () => {
+        this.props.login()
+        this.props.history.push('/dashboard');
+    }
 
     handleChange = e => {
         this.setState({
@@ -28,6 +30,7 @@ export default class LogIn extends Component {
             localStorage.setItem('token', data.jwt)
             localStorage.setItem('user', data.user.username)
             localStorage.setItem('userEmail', data.user.email)
+            console.log(this.props.login(data))
         })
     }
 
@@ -36,6 +39,7 @@ export default class LogIn extends Component {
         return (
             <div className="login">
                 <label htmlFor="email">Email: </label>
+            
                 <input onChange={this.handleChange} name="email" type="text"/>
 
                 <label htmlFor="password">Password: </label>
