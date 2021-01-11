@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { api } from '../services/api.js';
 import '../styles/signup.css';
 
 
@@ -19,6 +20,13 @@ export default class SignUp extends Component {
         })
     }
 
+    handleSubmit = e => {
+        e.preventDefault();
+        const user = { user: this.state }
+        api.user.newUser(user)
+        .then(resp => console.log(resp))
+    }
+
     render() {
         return (
             <>
@@ -32,7 +40,7 @@ export default class SignUp extends Component {
                     <label htmlFor="password">Password: </label>
                     <input onChange={this.handleChange} name="password" type="text"/>
 
-                    <button type="submit">Sign Up</button>
+                    <button onClick={this.handleSubmit} type="submit">Sign Up</button>
                 </div>
             </>
         )

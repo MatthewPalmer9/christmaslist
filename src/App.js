@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import Index from './components/Index.jsx';
+import Navbar from './components/Navbar.jsx';
+import Landing from './containers/Landing.jsx';
+import Dashboard from './containers/Dashboard.jsx';
+import Login from './components/LogIn.jsx';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { api, API_ROOT } from './services/api';
 
@@ -41,9 +44,9 @@ export default class App extends Component {
 
   updateUser = data => {
     this.setState({
-      authUser: data.user,
-    })
-  }
+      authUser: data.user
+    });
+  };
 
 
   render() {
@@ -53,11 +56,13 @@ export default class App extends Component {
       return(
         <>
           <Router>
+            <Navbar />
             <Switch>
               <Route exact path="/">
                 {this.state.authUser.id ? <Redirect to="/dashboard" /> : <Landing signupForm={this.state.signupForm} onLogin={this.login} />}
               </Route>
 
+              <Route exact path="/login" component={Login} />
               <Route path='/dashboard' render={(props) => <Dashboard {...props} authUser={this.state.authUser} />} />
 
             </Switch>

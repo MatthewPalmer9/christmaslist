@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { api } from '../services/api.js';
 import "../styles/login.css";
 
 export default class LogIn extends Component {
@@ -11,9 +12,22 @@ export default class LogIn extends Component {
         }
     }
 
+    
+
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit = () => {
+        const user = { user: this.state }
+
+        api.auth.login(user)
+        .then(data => {
+            localStorage.setItem('token', data.jwt)
+            localStorage.setItem('user', data.user.username)
+            localStorage.setItem('userEmail', data.user.email)
         })
     }
 
@@ -27,7 +41,7 @@ export default class LogIn extends Component {
                 <label htmlFor="password">Password: </label>
                 <input onChange={this.handleChange} name="password" type="text"/>
 
-                <button type="submit">Log In</button>
+                <button onClick={this.handleSubmit} type="submit">Log In</button>
             </div>
         )
     }

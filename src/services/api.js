@@ -1,5 +1,5 @@
 // export const API_ROOT = "placeholder for production"
-export const API_ROOT = "https://localhost:3000/api/v1"
+export const API_ROOT = "http://localhost:3000/api/v1"
 
 const token = () => localStorage.getItem("token");
 
@@ -26,7 +26,7 @@ const newUser = data => {
         method: "POST",
         headers: headers(),
         body: JSON.stringify(data)
-    }).then(resp => resp.json());
+    }).then(resp => resp.json())
 }
 
 const getCurrentSession = () => {

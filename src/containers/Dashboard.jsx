@@ -6,7 +6,7 @@ export default function Dashboard(props) {
 
     return (
         <>
-            <div>Hello from Dashboard</div>
+            <div className="dashboard-welcome">Hello from Dashboard</div>
         </>
     )
 }
