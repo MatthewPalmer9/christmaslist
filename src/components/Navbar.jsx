@@ -6,6 +6,10 @@ export default function Navbar(props) {
     const {authUser} = props.state;
     let history = useHistory();
 
+    const Home = () => {
+        history.push("/");
+    }
+
     const LogIn = () => {
         history.push("/login");
     }
@@ -24,7 +28,7 @@ export default function Navbar(props) {
             {authUser.id ? (
                 <>
                     <div className="nav-container">
-                        <div className="brand">JollyList</div>
+                        <div onClick={Home} className="brand"><a href="/">JollyList</a></div>
                         <div className="auth-box">
                             <div>{authUser.username}</div>
                             <button onClick={LogOut} id="logout">Log Out</button>
@@ -34,7 +38,7 @@ export default function Navbar(props) {
             ) : (
                 <>
                     <div className="nav-container">
-                        <div className="brand">JollyList</div>
+                        <div onClick={Home} className="brand"><a href="/">JollyList</a></div>
                         <div className="auth-box">
                             <button onClick={LogIn} id="login">Log In</button>
                             <button onClick={SignUp} id="signup">Sign Up</button>
