@@ -65,7 +65,7 @@ export default class App extends Component {
           <Router>
             <Navbar state={this.state} handleLogout={this.logout}/>
               <Route exact path="/">
-                {this.state.authUser.id ? <Redirect to="/dashboard" /> : <Landing signupForm={this.state.signupForm} onLogin={this.login} />}
+                {this.state.authUser.id ? <Redirect to="/dashboard" /> : <Landing onLogin={this.login} />}
               </Route>
 
               <Route exact path="/login" render={(props) => <Login {...props} state={this.state} login={this.login} />} />

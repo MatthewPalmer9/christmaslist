@@ -6,10 +6,19 @@ export default function Navbar(props) {
     const {authUser} = props.state;
     let history = useHistory();
 
+    const LogIn = () => {
+        history.push("/login");
+    }
+
+    const SignUp = () => {
+        history.push("/signup");
+    }
+
     const LogOut = () => {
-        props.handleLogout()
+        props.handleLogout();
         history.push("/");
     }
+
     return (
             <>
             {authUser.id ? (
@@ -24,7 +33,13 @@ export default function Navbar(props) {
                 </>
             ) : (
                 <>
-                    <div>You are not logged in</div>
+                    <div className="nav-container">
+                        <div className="brand">JollyList</div>
+                        <div className="auth-box">
+                            <button onClick={LogIn} id="login">Log In</button>
+                            <button onClick={SignUp} id="signup">Sign Up</button>
+                        </div>
+                    </div>
                 </>
             )}
             </>

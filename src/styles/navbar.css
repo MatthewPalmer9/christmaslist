@@ -19,8 +19,28 @@
     -webkit-text-fill-color: transparent;
 }
 
+#login {
+    margin-left: 4px;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    color: rgb(0, 170, 0);
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 0px 2px rgb(0, 170, 0);
+    background-color: white;
+    transition: 400ms;
+}
+        #login:hover {
+            cursor: pointer;
+            color: white;
+            background-color: rgb(0, 170, 0);
+        }
+
 #logout {
     margin-left: 4px;
+    outline: none;
     border: none;
     width: 100px;
     height: 30px;
@@ -33,7 +53,6 @@
 }
         #logout:hover {
             cursor: pointer;
-            background-color: white;
             color: white;
             background-color: rgb(170, 0, 0);
         }
@@ -44,5 +63,23 @@
     position: absolute;
     width: 100vw;
     height: 50px;
-    /* background-color: grey; */
 }
+
+#signup {
+    margin-left: 4px;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    color: rgb(0, 0, 170);
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 0px 2px rgb(0, 0, 170);
+    background-color: white;
+    transition: 400ms;
+}
+        #signup:hover {
+            cursor: pointer;
+            color: white;
+            background-color: rgb(0, 0, 170);
+        }
