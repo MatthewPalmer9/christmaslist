@@ -1,17 +1,13 @@
 import React from 'react';
-import SignUp from '../components/SignUp.jsx';
-import Login from '../components/LogIn.jsx';
+import '../styles/landing.css';
 
-export default function Landing(props) {
-
-    const { signupForm, onLogin } = props;
+export default function Landing() {
 
     return (
         <>
-            { signupForm ?
-                <SignUp onSignin={onLogin} /> :
-                <Login onLogin={onLogin} />
-            }
+            <div className="landing-container">
+                <div className="bg-downpoint"></div>
+            </div>
         </>
     )
 }

@@ -1,0 +1,11 @@
+.bg-downpoint {
+    padding-top: 50px;
+    clip-path: polygon(100% 0, 0 0, 0 50%, 50% 100%, 100% 50%);
+    background-color: rgba(0, 170, 0, 0.5);
+    height: 60vh;
+}
+
+.landing-container {
+    background-color: #eeeeee;
+    height: 90vh;
+}
