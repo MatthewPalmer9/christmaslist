@@ -1,9 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import '../styles/navbar.css';
 
 export default function Navbar(props) {
     const {authUser} = props.state;
-    const {handleLogout} = props;
+    let history = useHistory();
+
+    const LogOut = () => {
+        props.handleLogout()
+        history.push("/");
+    }
     return (
             <>
             {authUser.id ? (
@@ -12,7 +18,7 @@ export default function Navbar(props) {
                         <div className="brand">JollyList</div>
                         <div className="auth-box">
                             <div>{authUser.username}</div>
-                            <button onClick={handleLogout} id="logout">Log Out</button>
+                            <button onClick={LogOut} id="logout">Log Out</button>
                         </div>
                     </div>
                 </>

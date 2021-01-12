@@ -38,6 +38,7 @@ export default class LogIn extends Component {
         });
         const inputVal = document.querySelectorAll("input");
         inputVal.forEach((input) => input.value = "");
+        this.props.history.push("/dashboard");
     }
 
 
