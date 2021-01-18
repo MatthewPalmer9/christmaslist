@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import Navbar from './components/Navbar.jsx';
-import Landing from './containers/Landing.jsx';
 import Dashboard from './containers/Dashboard.jsx';
+import Landing from './containers/Landing.jsx';
 import Login from './components/LogIn.jsx';
+import MyList from './components/MyList.jsx';
+import Navbar from './components/Navbar.jsx';
 import SignUp from './components/SignUp.jsx';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { api, API_ROOT } from './services/api';
@@ -68,6 +69,7 @@ export default class App extends Component {
                 {authUser.id ? <Redirect to="/dashboard" /> : <Landing onLogin={this.login} />}
               </Route>
 
+              <Route exact path="/mylist" render={(props) => <MyList {...props} authUser={this.state.authUser} />} /> 
               <Route exact path="/login" render={(props) => <Login {...props} state={this.state} login={this.login} />} />
               <Route exact path="/signup" render={(props) => <SignUp {...props} />} />
               <Route path='/dashboard' render={(props) => <Dashboard {...props} authUser={this.state.authUser} />} />

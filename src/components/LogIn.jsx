@@ -50,7 +50,7 @@ export default class LogIn extends Component {
                 <input onChange={this.handleChange} name="email" type="text"/>
 
                 <label htmlFor="password">Password: </label>
-                <input onChange={this.handleChange} name="password" type="text"/>
+                <input onChange={this.handleChange} name="password" type="password"/>
 
                 <button onClick={this.handleSubmit} type="submit">Log In</button>
             </div>

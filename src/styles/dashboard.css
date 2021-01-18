@@ -1,5 +1,5 @@
 .dashboard-container {
-    background-color: rgb(140, 205, 140);
+    background-color: rgb(72, 145, 72);
     width: 100vw;
     height: 95vh;
 }
@@ -27,7 +27,7 @@
     justify-content: center;
 }
 
-.christmas-list, .friends-family-list, .friends {
+.christmas-list, .friends-list, .friends {
     width: 250px;
     height: 200px;
     background-color: white;
@@ -35,7 +35,24 @@
     box-shadow: 0 0 100px -45px black;
     transition: 400ms;
 }
-.christmas-list:hover, .friends-family-list:hover, .friends:hover {
-    cursor: pointer;
-    box-shadow: 0 0 50px 10px rgba(0, 99, 0, 0.5);
+        .christmas-list:hover, .friends-list:hover, .friends:hover {
+            cursor: pointer;
+            box-shadow: 0 0 50px 10px rgba(0, 99, 0, 0.5);
+        }
+
+.christmas-list, .friends-list, .friends  {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-size: 2rem;
+}
+
+i {
+    margin-top: 40px;
+    font-size: 3rem;
 }
