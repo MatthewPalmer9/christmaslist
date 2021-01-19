@@ -1,19 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { api } from '../services/api.js';
 
 export default function MyList(props) {
     const { authUser } = props;
+    const [name, setName] = useState("");
     let history = useHistory();
 
     useEffect(() => {
-        console.log("Component mounted");
+        api.user.getUserList({user: authUser})
+        .then(resp => console.log(resp));
+        console.log("STATE:", name);
     });
+
+    const handleChange = e => {
+        setName(e.target.value)
+    }
 
     return (
         <>
             {authUser.id ? (
                 <>
-                    <div>Hello {authUser.username}</div>
+                    <input onChange={handleChange}></input>
+                    {name}
                 </>
             ) : (
                 history.push("/")
