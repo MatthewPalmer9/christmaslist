@@ -51,6 +51,14 @@ const getUserList = data => {
     }).then(resp => resp.json())
 };
 
+const addToUserList = data => {
+    return fetch(`${API_ROOT}/users/${data.user.id}/list/add`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify(data)
+    }).then(resp => resp.json())
+};
+
 const deleteUser = user_id => {
     return fetch(`${API_ROOT}/users/${user_id}`, {
         method: "DELETE",
@@ -68,5 +76,9 @@ export const api = {
         updateUser,
         deleteUser,
         getUserList,
+    },
+    list: {
+        getUserList,
+        addToUserList,
     }
 }
