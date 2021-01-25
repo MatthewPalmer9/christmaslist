@@ -31,10 +31,11 @@ export default function MyList(props) {
     }
 
     const handleSubmission = e => {
-        e.preventDefault();
 
-        const list_item_params = { description: description, url: url };
-        api.list.addToUserList({ data: { user: authUser, list: list_item_params } })
+        api.list.addToUserList({
+            list: { description: description, url: url }
+        })
+        .then(resp => console.log(resp))
     }
 
     return (
@@ -63,7 +64,7 @@ export default function MyList(props) {
                                 </tr>
                                     {listitems.map((item, index) => {
                                         return (
-                                            <tr key={index}>
+                                            <tr key={item.id}>
                                                 <td>{listitems[index].description}</td>
                                                 <td>
                                                     {listitems[index].url.includes("https") ? (

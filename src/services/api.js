@@ -51,8 +51,16 @@ const getUserList = data => {
     }).then(resp => resp.json())
 };
 
+const getUserListByUrl = data => {
+    return fetch(`${API_ROOT}/users/public/list`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify(data)
+    }).then(resp => resp.json())
+};
+
 const addToUserList = data => {
-    return fetch(`${API_ROOT}/users/${data.user.id}/list/add`, {
+    return fetch(`${API_ROOT}/users/list/add`, {
         method: "POST",
         headers: headers(),
         body: JSON.stringify(data)
@@ -79,6 +87,7 @@ export const api = {
     },
     list: {
         getUserList,
+        getUserListByUrl,
         addToUserList,
     }
 }
