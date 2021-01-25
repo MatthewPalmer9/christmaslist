@@ -1,0 +1,32 @@
+#list-item-form {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    width: 200px;
+    padding: 20px
+}
+
+table {
+    display: block;
+    text-align: center;
+    background-color: green;
+    width: 400px;
+    /* margin: 0 auto; */
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 0;
+    border: 1px solid black;
+    width: 200px;
+    text-align: center;
+}
+
+.user-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}

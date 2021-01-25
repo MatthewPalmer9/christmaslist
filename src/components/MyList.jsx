@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { api } from '../services/api.js';
+import '../styles/mylist.css';
 
 export default function MyList(props) {
     const { authUser } = props;
@@ -18,7 +19,8 @@ export default function MyList(props) {
             setListitems(resp.listitems)
             console.log(resp)
         })
-    }, []);
+        console.log("MATCH", props.match)
+    }, [authUser]);
 
     const handleSettingDescription = e => {
         setDescription(e.target.value)
@@ -38,9 +40,9 @@ export default function MyList(props) {
     return (
         <>
             {authUser.id ? (
-                <>
+                <div className="user-list-container">
                     <h1>{list.name + "'s List"}</h1>
-                    <form onSubmit={handleSubmission}>
+                    <form id="list-item-form" onSubmit={handleSubmission}>
                         <label htmlFor="description">Description of Item:</label>
                         <input type="text" onChange={handleSettingDescription} />
                         <label htmlFor="url">Link to Item:</label>
@@ -63,15 +65,21 @@ export default function MyList(props) {
                                         return (
                                             <tr key={index}>
                                                 <td>{listitems[index].description}</td>
-                                                <td>{listitems[index].url}</td>
+                                                <td>
+                                                    {listitems[index].url.includes("https") ? (
+                                                        <a href={listitems[index].url}>LINK</a> 
+                                                    ) : (
+                                                        <a href={`https://` + listitems[index].url}>LINK</a> 
+                                                    )
+                                                }           
+                                                </td>
                                             </tr>
                                         )
-                                        // console.log(listitems[index])
                                     })}
                             </table>
                         )
                     }
-                </>
+                </div>
             ) : (
                 history.push("/")
             )}
