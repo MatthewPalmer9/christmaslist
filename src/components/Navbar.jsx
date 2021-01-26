@@ -30,7 +30,7 @@ export default function Navbar(props) {
                     <div className="nav-container">
                         <div onClick={Home} className="brand"><a href="/">JollyList</a></div>
                         <div className="auth-box">
-                            <div>{authUser.username}</div>
+                            <div><a href={`/dashboard`}>{authUser.username}</a></div>
                             <button onClick={LogOut} id="logout">Log Out</button>
                         </div>
                     </div>

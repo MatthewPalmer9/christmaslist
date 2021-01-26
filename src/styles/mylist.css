@@ -1,11 +1,32 @@
+h1 {
+    text-align: center;
+}
+
+.delete-btn {
+    background-color: rgb(170, 8, 0);
+    color: white;
+    border: 2px solid rgb(170, 8, 0);
+    border-radius: 5px;
+    transition: 300ms;
+}
+        .delete-btn:hover {
+            cursor: pointer;
+            color: rgb(170, 8, 0);
+            background-color: white;
+        }
+
 #list-item-form {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
     color: white;
     width: 200px;
     padding: 20px
 }
+        #list-item-form button {
+            margin-top: 10px;
+        }
 
 table {
     display: block;

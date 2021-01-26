@@ -58,23 +58,31 @@ export default function MyList(props) {
                         </>
                     ) : (
                             <table>
-                                <tr>
-                                    <th>Description</th>
-                                    <th>URL</th>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>URL</th>
+                                        <th>Delete List Item</th>
+                                    </tr>
+                                </tbody>
                                     {listitems.map((item, index) => {
                                         return (
-                                            <tr key={item.id}>
-                                                <td>{listitems[index].description}</td>
-                                                <td>
-                                                    {listitems[index].url.includes("https") ? (
-                                                        <a href={listitems[index].url}>LINK</a> 
-                                                    ) : (
-                                                        <a href={`https://` + listitems[index].url}>LINK</a> 
-                                                    )
-                                                }           
-                                                </td>
-                                            </tr>
+                                            <tbody key={item.id}>
+                                                <tr>
+                                                    <td>{listitems[index].description}</td>
+                                                    <td>
+                                                        {listitems[index].url.includes("https") ? (
+                                                            <a href={listitems[index].url}>LINK</a> 
+                                                        ) : (
+                                                            <a href={`https://` + listitems[index].url}>LINK</a> 
+                                                        )
+                                                    }           
+                                                    </td>
+                                                    <td>
+                                                        <button className="delete-btn">DELETE</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
                                         )
                                     })}
                             </table>

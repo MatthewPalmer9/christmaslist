@@ -74,6 +74,10 @@ const deleteUser = user_id => {
     }).then(resp => resp.json());
 };
 
+const deleteItem = data => {
+    
+}
+
 export const api = {
     auth: {
         login,
