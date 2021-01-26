@@ -74,9 +74,12 @@ const deleteUser = user_id => {
     }).then(resp => resp.json());
 };
 
-const deleteItem = data => {
-    
-}
+const deleteItem = listitem_id => {
+    return fetch(`${API_ROOT}/listitem/${listitem_id}/delete`, {
+        method: "DELETE",
+        headers: headers(),
+    }).then(resp => resp.json())
+};
 
 export const api = {
     auth: {
@@ -93,5 +96,6 @@ export const api = {
         getUserList,
         getUserListByUrl,
         addToUserList,
+        deleteItem,
     }
 }

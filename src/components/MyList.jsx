@@ -19,8 +19,12 @@ export default function MyList(props) {
             setListitems(resp.listitems)
             console.log(resp)
         })
-        console.log("MATCH", props.match)
     }, [authUser]);
+
+    const handleDelete = e => {
+        api.list.deleteItem(e.target.id)
+        .then(resp => console.log(resp))
+    }
 
     const handleSettingDescription = e => {
         setDescription(e.target.value)
@@ -79,7 +83,7 @@ export default function MyList(props) {
                                                     }           
                                                     </td>
                                                     <td>
-                                                        <button className="delete-btn">DELETE</button>
+                                                    <button onClick={handleDelete} id={item.id} className="delete-btn">DELETE</button>
                                                     </td>
                                                 </tr>
                                             </tbody>
