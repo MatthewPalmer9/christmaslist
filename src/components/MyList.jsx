@@ -83,7 +83,9 @@ export default function MyList(props) {
                                                     }           
                                                     </td>
                                                     <td>
-                                                    <button onClick={handleDelete} id={item.id} className="delete-btn">DELETE</button>
+                                                        <form>
+                                                            <button onClick={handleDelete} type="submit" id={item.id} className="delete-btn">DELETE</button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             </tbody>
