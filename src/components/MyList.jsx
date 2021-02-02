@@ -26,6 +26,10 @@ export default function MyList(props) {
         .then(resp => console.log(resp))
     }
 
+    const handleEdit = e => {
+        console.log(e.target.id);
+    }
+
     const handleSettingDescription = e => {
         setDescription(e.target.value)
     }
@@ -67,6 +71,7 @@ export default function MyList(props) {
                                         <th>Description</th>
                                         <th>URL</th>
                                         <th>Delete List Item</th>
+                                        <th>Edit List Item</th>
                                     </tr>
                                 </tbody>
                                     {listitems.map((item, index) => {
@@ -86,6 +91,9 @@ export default function MyList(props) {
                                                         <form>
                                                             <button onClick={handleDelete} type="submit" id={item.id} className="delete-btn">DELETE</button>
                                                         </form>
+                                                    </td>
+                                                    <td>
+                                                        <button onClick={handleEdit} id={item.id} className="edit-btn">EDIT</button>
                                                     </td>
                                                 </tr>
                                             </tbody>

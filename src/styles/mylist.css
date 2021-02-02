@@ -30,11 +30,14 @@ h1 {
 
 table {
     display: block;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -2px black;
     text-align: center;
     background-color: green;
     width: 400px;
     /* margin: 0 auto; */
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
 }
 
 th, td {
