@@ -13,7 +13,7 @@ export default function TestPage(props) {
             setUser(resp.user.username)
             setList(resp.listitems)
         })
-    }, [])
+    }, [props.match.url])
 
 
     return (

@@ -4,3 +4,28 @@
     background-size: cover;
     height: 100vh;
 }
+
+.landing-header-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 120px;
+    width: 95vw;
+    margin: 0 auto;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 20px 3px black;
+}
+        .landing-header-container h1 {
+            text-align: center;
+            width: 100%;
+            color: white;
+        }
+
+        .landing-header-container p {
+            text-align: center;
+            width: 75%;
+            margin: 0 auto;
+            color: white;
+        }
