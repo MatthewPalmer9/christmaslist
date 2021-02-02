@@ -12,6 +12,7 @@ export default function Landing() {
                         At JollyList, you can build and share your Christmas 
                         list without ever losing it. Work on it <em>year round</em>!
                     </p>
+                    <button>Sign Up</button>
                 </div>
             </div>
         </>
