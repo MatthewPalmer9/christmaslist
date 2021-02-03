@@ -1,53 +1,58 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { api } from '../services/api.js';
 import '../styles/signup.css';
 
 
-export default class SignUp extends Component {
+export default function SignUp(props) {
 
-    constructor() {
-        super()
-        this.state = {
-            username: "",
-            email: "",
-            password: ""
+    const history = useHistory();
+
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleChange = e => {
+        if(e.target.name === "username") {
+            setUsername(e.target.value);
+        } else if(e.target.name === "email") {
+            setEmail(e.target.value);
+        } else if(e.target.name === "password") {
+            setPassword(e.target.value)
         }
     }
 
-    handleChange = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
-    handleSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
-        const user = { user: this.state }
+        const data = {username: username, email: email, password: password}
+        const user = { user: data }
         api.user.newUser(user)
         .then(resp => console.log(resp))
     }
 
-    render() {
+    const redirectToSignIn = () => {
+        history.push("/login");
+    }
+
         return (
             <>
             <div className="signup-container">
                 <div className="signup-shadow-box">
                     <div className="signup">
                         <label htmlFor="username">Username: </label>
-                        <input onChange={this.handleChange} name="username" type="text"/>
+                        <input onChange={handleChange} name="username" type="text"/>
 
                         <label htmlFor="email">Email: </label>
-                        <input onChange={this.handleChange} name="email" type="text"/>
+                        <input onChange={handleChange} name="email" type="text"/>
 
                         <label htmlFor="password">Password: </label>
-                        <input onChange={this.handleChange} name="password" type="text"/>
+                        <input onChange={handleChange} name="password" type="text"/>
 
-                        <button onClick={this.handleSubmit} type="submit">Sign Up</button>
+                        <button onClick={handleSubmit} type="submit">Sign Up</button>
                     </div>
-                    <p>Already have an account? <span>Sign in here!</span></p>
+                    <p>Already have an account? <span onClick={redirectToSignIn}>Sign in here!</span></p>
                 </div>
             </div>
             </>
         )
-    }
 }
