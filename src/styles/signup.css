@@ -57,6 +57,7 @@
 
 .signup button {
     margin-top: 10px;
+    outline: none;
     border: none;
     height: 30px;
     font-size: 1.25rem;
