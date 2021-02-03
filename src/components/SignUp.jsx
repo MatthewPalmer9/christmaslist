@@ -30,18 +30,23 @@ export default class SignUp extends Component {
     render() {
         return (
             <>
-                <div className="signup">
-                    <label htmlFor="username">Username: </label>
-                    <input onChange={this.handleChange} name="username" type="text"/>
+            <div className="signup-container">
+                <div className="signup-shadow-box">
+                    <div className="signup">
+                        <label htmlFor="username">Username: </label>
+                        <input onChange={this.handleChange} name="username" type="text"/>
 
-                    <label htmlFor="email">Email: </label>
-                    <input onChange={this.handleChange} name="email" type="text"/>
+                        <label htmlFor="email">Email: </label>
+                        <input onChange={this.handleChange} name="email" type="text"/>
 
-                    <label htmlFor="password">Password: </label>
-                    <input onChange={this.handleChange} name="password" type="text"/>
+                        <label htmlFor="password">Password: </label>
+                        <input onChange={this.handleChange} name="password" type="text"/>
 
-                    <button onClick={this.handleSubmit} type="submit">Sign Up</button>
+                        <button onClick={this.handleSubmit} type="submit">Sign Up</button>
+                    </div>
+                    <p>Already have an account? <span>Sign in here!</span></p>
                 </div>
+            </div>
             </>
         )
     }

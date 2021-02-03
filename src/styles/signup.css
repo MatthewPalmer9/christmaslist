@@ -1,10 +1,69 @@
-.signup {
+.signup-container {
     display: flex;
-    flex-direction: column;
-    width: 150px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../imgs/christmas-signup.jpeg') center center no-repeat;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
 }
 
-.signup button:hover {
-    cursor: pointer;
+.signup-shadow-box {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: auto;
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 300px;
+    box-shadow: 0 0 20px 3px black;
 }
+    .signup-shadow-box p {
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .signup-shadow-box p span {
+        color: skyblue;
+        border-bottom: 1px dotted skyblue;
+    }
+        .signup-shadow-box p span:hover {
+            cursor: pointer;
+        }
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
+}
+    .signup input {
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        height: 25px;
+        transition: 300ms;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .signup input:focus {
+        box-shadow: 0 0 0 2px rgba(174, 0, 0, 0.5);
+    }
+
+    .signup label {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 2px;
+        color: white;
+    }
+
+.signup button {
+    margin-top: 10px;
+    border: none;
+    height: 30px;
+    font-size: 1.25rem;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+}
+    .signup button:hover {
+        cursor: pointer;
+    }
