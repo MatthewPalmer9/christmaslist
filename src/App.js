@@ -72,7 +72,7 @@ export default class App extends Component {
               </Route>
 
               <Route exact path="/mylist" render={(props) => <MyList {...props} authUser={this.state.authUser} />} /> 
-              <Route exact path="/login" render={(props) => <Login {...props} state={this.state} login={this.login} />} />
+              <Route exact path="/login" render={(props) => <Login {...props} state={this.state} authUser={this.state.authUser} login={this.login} />} />
               <Route exact path="/signup" render={(props) => <SignUp {...props} />} />
               <Route exact path="/lists/:username" render={(props) => <TestPage {...props} user={authUser} />} />
               <Route path='/dashboard' render={(props) => <Dashboard {...props} authUser={this.state.authUser} />} />

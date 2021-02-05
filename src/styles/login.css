@@ -1,50 +1,71 @@
+.login-container {
+    display: flex;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../imgs/christmas-signup.jpeg') center center no-repeat;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.login-shadow-box {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: auto;
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 300px;
+    box-shadow: 0 0 20px 3px black;
+}
+    .login-shadow-box p {
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .login-shadow-box p span {
+        color: skyblue;
+        border-bottom: 1px dotted skyblue;
+    }
+        .login-shadow-box p span:hover {
+            cursor: pointer;
+        }
+
 .login {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    padding-top: 200px;
+    width: 200px;
+    margin: auto;
 }
     .login input {
-        display: flex;
-        align-items: center;
-        border: 1px solid grey;
+        color: white;
+        border: none;
+        border-radius: 5px;
         outline: none;
-        width: 80vw;
-        margin: 0 auto;
-        height: 30px;
-        border-radius: 10px;
+        height: 25px;
         transition: 300ms;
+        background-color: rgba(255, 255, 255, 0.15);
     }
-        .login input:focus {
-            box-shadow: inset 0px 0px 0px 2px rgb(34, 170, 0);;
-        }
+
+    .login input:focus {
+        box-shadow: 0 0 0 2px rgba(174, 0, 0, 0.5);
+    }
 
     .login label {
-        display: flex;
-        margin: 10px 0;
-        width: 100vw;
-        justify-content: center;
-        font-size: 28px;
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 2px;
+        color: white;
     }
 
 .login button {
-    display: flex;
+    margin-top: 10px;
     outline: none;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto;
-    width: 200px;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid rgb(63, 177, 63);
-    background-color: white;
-    transition: 400ms;
+    border: none;
+    height: 30px;
+    font-size: 1.25rem;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
 }
     .login button:hover {
         cursor: pointer;
-        color: white;
-        background-color: rgb(63, 177, 63);
     }
