@@ -46,6 +46,17 @@ export default function MyList(props) {
         .then(resp => console.log(resp))
     }
 
+    const handleLink = index => {
+        const checker = listitems[index].url.includes("https");
+        if(checker) {
+            return <a href={listitems[index].url} target="_blank" rel="noreferrer">LINK</a>
+        } else if(!checker && listitems[index].url !== ""){
+            return <a href={`https://` + listitems[index].url} target="_blank" rel="noreferrer">LINK</a>
+        } else {
+            return <span>N/A</span>
+        }
+    }
+
     return (
         <>
             {authUser.id ? (
@@ -65,41 +76,28 @@ export default function MyList(props) {
                             <h3>You have nothing in your list. Why not add something?</h3>
                         </>
                     ) : (
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Description</th>
-                                        <th>URL</th>
-                                        <th>Delete List Item</th>
-                                        <th>Edit List Item</th>
-                                    </tr>
-                                </tbody>
-                                    {listitems.map((item, index) => {
-                                        return (
-                                            <tbody key={item.id}>
-                                                <tr>
-                                                    <td>{listitems[index].description}</td>
-                                                    <td>
-                                                        {listitems[index].url.includes("https") ? (
-                                                            <a href={listitems[index].url}>LINK</a> 
-                                                        ) : (
-                                                            <a href={`https://` + listitems[index].url}>LINK</a> 
-                                                        )
-                                                    }           
-                                                    </td>
-                                                    <td>
-                                                        <form>
-                                                            <button onClick={handleDelete} type="submit" id={item.id} className="delete-btn">DELETE</button>
-                                                        </form>
-                                                    </td>
-                                                    <td>
-                                                        <button onClick={handleEdit} id={item.id} className="edit-btn">EDIT</button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        )
-                                    })}
-                            </table>
+                            <div className="list-container">
+                                <h3>My list</h3>
+                                <div className="hr"></div>
+                                <div className="column-titles">
+                                    <span>Description</span>
+                                    <span>Order Online</span>
+                                    <span>Edit</span>
+                                    <span>Delete</span>
+                                </div>
+                                <div className="scroll-container">
+                                {listitems.map((item, index) => {
+                                    return (
+                                        <div className="list-item">
+                                            <span>{item.description}</span>
+                                            <span>{handleLink(index)}</span>
+                                            <span><form><button>Edit</button></form></span>
+                                            <span><form><button id={item.id} onClick={handleDelete} type="submit">Delete</button></form></span>
+                                        </div>
+                                    )
+                                })}
+                                </div>
+                            </div>
                         )
                     }
                 </div>

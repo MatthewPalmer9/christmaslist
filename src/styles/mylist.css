@@ -4,6 +4,7 @@ body {
 
 h1 {
     text-align: center;
+    margin-top: 150px;
 }
 
 .delete-btn {
@@ -32,30 +33,106 @@ h1 {
             margin-top: 10px;
         }
 
-table {
-    display: block;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px -2px black;
-    text-align: center;
-    background-color: green;
-    width: 400px;
-    /* margin: 0 auto; */
-    margin: 10px auto 0 auto;
-}
-
-th, td {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-    width: 200px;
-    text-align: center;
-}
-
 .user-list-container {
     display: flex;
     flex-direction: column;
     width: 100vw;
     justify-content: center;
     align-items: center;
+}
+
+.list-container {
+    display: flex;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 50px -20px black;
+    width: 95vw;
+    height: 250px;
+}
+
+.list-container .column-titles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 98%;
+    margin: 0 auto;
+    border-bottom: 1px dotted black;
+    height: 30px;
+    background-color: #cecece;
+}
+
+.list-container h3 {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.list-container .hr {
+    height: 1px;
+    background-color: black;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.list-container .list-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 98%;
+    margin: 0 auto;
+    height: 50px;
+    background-color: #cecece;
+}
+
+.list-container .list-item span {
+    display: flex;
+    overflow: hidden;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+    margin: 0px 12.5% 0px 12.5%;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container .list-item span:nth-of-type(1) {
+    display: inline-block;
+    position: relative;
+    padding: 2px auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    text-align: left;
+    width: 100%;
+    height: 80%;
+    /* box-sizing: content-box; */
+}
+    .list-container .list-item span:nth-of-type(1)::-webkit-scrollbar {
+        /* display: none; */
+        
+    }
+
+.scroll-container {
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 100, 0, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(139, 0, 0, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(139, 0, 0);
 }

@@ -15,6 +15,17 @@ export default function TestPage(props) {
         })
     }, [props.match.url])
 
+    const handleLink = index => {
+        const checker = list[index].url.includes("https");
+        if(checker) {
+            return <a href={list[index].url} target="_blank" rel="noreferrer">LINK</a>
+        } else if(!checker && list[index].url !== ""){
+            return <a href={`https://` + list[index].url} target="_blank" rel="noreferrer">LINK</a>
+        } else {
+            return <span>N/A</span>
+        }
+    }
+
 
     return (
         <div>
@@ -37,12 +48,7 @@ export default function TestPage(props) {
                                                 <tr>
                                                     <td>{list[index].description}</td>
                                                     <td>
-                                                        {list[index].url.includes("https") ? (
-                                                            <a href={list[index].url}>LINK</a> 
-                                                        ) : (
-                                                            <a href={`https://` + list[index].url}>LINK</a> 
-                                                        )
-                                                    }           
+                                                        {handleLink(index)}           
                                                     </td>
                                                 </tr>
                                             </tbody>

@@ -6,16 +6,12 @@ export default function Dashboard(props) {
     const { authUser } = props;
     let history = useHistory();
 
-    const redirectToUserList = () => {
+    const redirectToEditList = () => {
         history.push("/mylist");
     }
 
-    const redirectToFriendsChristmasLists = () => {
-        history.push("/myfriendslists");
-    }
-
-    const redirectToFriendsList = () => {
-        history.push("/myfriends");
+    const redirectToLiveListLink = () => {
+        history.push(`/lists/${authUser.username}`);
     }
 
     return (
@@ -28,19 +24,25 @@ export default function Dashboard(props) {
                             <h1>{authUser.username}'s Dashboard</h1>
 
                             <div id="options">
-                                <div onClick={redirectToUserList} className="christmas-list">
-                                    <i class="fas fa-scroll"></i>
+                                <div className="christmas-list">
+                                    <i className="fas fa-scroll"></i>
                                     <p>My List</p>
+                                    <div className="list-options">
+                                        <button onClick={redirectToEditList}>Edit</button>
+                                        <button onClick={redirectToLiveListLink}>View List</button>
+                                    </div>
                                 </div>
 
-                                <div onClick={redirectToFriendsChristmasLists} className="friends-list">
-                                    <i class="fas fa-gifts"></i>
+                                <div className="friends-list">
+                                    <i className="fas fa-gifts"></i>
                                     <p>Friend's Lists</p>
+                                    <span>(Coming Soon!)</span>
                                 </div>
 
-                                <div onClick={redirectToFriendsList} className="friends">
-                                    <i class="fas fa-user-friends"></i>
+                                <div className="friends">
+                                    <i className="fas fa-user-friends"></i>
                                     <p>Friends</p>
+                                    <span>(Coming Soon!)</span>
                                 </div>
                             </div>
                         </div>
