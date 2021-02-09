@@ -33,6 +33,24 @@ h1 {
             margin-top: 10px;
         }
 
+.list-item .edit {
+    outline: none;
+    width: 100px;
+    height: 25px;
+    border: none;
+    background-color:rgba(0, 100, 0, 0.6);
+    color: white;
+}
+
+.list-item .delete {
+    outline: none;
+    width: 100px;
+    height: 25px;
+    border: none;
+    background-color: rgb(139, 0, 0);
+    color: white;
+}
+
 .user-list-container {
     display: flex;
     flex-direction: column;
@@ -79,16 +97,19 @@ h1 {
 .list-container .list-item {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-content: center;
     justify-items: center;
-    align-items: center;
     width: 98%;
-    margin: 0 auto;
-    height: 50px;
+    margin: 1px auto;
+    /* height: 100%; */
+    padding: 5px 0;
     background-color: #cecece;
 }
 
 .list-container .list-item span {
     display: flex;
+    padding: 5px 0;
     overflow: hidden;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
