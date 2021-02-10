@@ -28,7 +28,7 @@ export default function MyList(props) {
 
     const handleEdit = e => {
         e.preventDefault();
-        console.log(e.target.id);
+        history.push(`mylist/edit/` + e.target.id)
     }
 
     const handleSettingDescription = e => {
@@ -93,7 +93,7 @@ export default function MyList(props) {
                                             <span>{item.description}</span>
                                             <span>{handleLink(index)}</span>
                                             <span><form><button id={item.id} onClick={handleEdit} className="edit">Edit</button></form></span>
-                                            <span><form><button className = "delete" id={item.id} onClick={handleDelete} type="submit">Delete</button></form></span>
+                                            <span><form><button className="delete" id={item.id} onClick={handleDelete} type="submit">Delete</button></form></span>
                                         </div>
                                     )
                                 })}

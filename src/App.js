@@ -3,6 +3,7 @@ import Dashboard from './containers/Dashboard.jsx';
 import Landing from './containers/Landing.jsx';
 import Login from './components/LogIn.jsx';
 import MyList from './components/MyList.jsx';
+import MyListEdit from './components/MyListEdit.jsx';
 import Navbar from './components/Navbar.jsx';
 import SignUp from './components/SignUp.jsx';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
@@ -71,11 +72,13 @@ export default class App extends Component {
                 {authUser.id ? <Redirect to="/dashboard" /> : <Landing onLogin={this.login} />}
               </Route>
 
-              <Route exact path="/mylist" render={(props) => <MyList {...props} authUser={this.state.authUser} />} /> 
-              <Route exact path="/login" render={(props) => <Login {...props} state={this.state} authUser={this.state.authUser} login={this.login} />} />
+              <Route exact path="/mylist" render={(props) => <MyList {...props} authUser={authUser} />} /> 
+              <Route exact path="/mylist/edit/:id" render={(props) => <MyListEdit {...props} authUser={authUser} />} />
+              <Route exact path="/login" render={(props) => <Login {...props} state={this.state} authUser={authUser} login={this.login} />} />
               <Route exact path="/signup" render={(props) => <SignUp {...props} />} />
               <Route exact path="/lists/:username" render={(props) => <TestPage {...props} user={authUser} />} />
-              <Route path='/dashboard' render={(props) => <Dashboard {...props} authUser={this.state.authUser} />} />
+              <Route path='/dashboard' render={(props) => <Dashboard {...props} authUser={authUser} />} />
+              
           </Router>
         </>
       )

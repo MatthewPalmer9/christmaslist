@@ -59,6 +59,14 @@ const getUserListByUrl = data => {
     }).then(resp => resp.json())
 };
 
+const editUserListByUrl = data => {
+    return fetch(`${API_ROOT}/users/list/${data}/show`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify(data)
+    }).then(resp => resp.json())
+};
+
 const addToUserList = data => {
     return fetch(`${API_ROOT}/users/list/add`, {
         method: "POST",
@@ -95,6 +103,7 @@ export const api = {
     list: {
         getUserList,
         getUserListByUrl,
+        editUserListByUrl,
         addToUserList,
         deleteItem,
     }
