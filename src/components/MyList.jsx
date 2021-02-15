@@ -17,7 +17,6 @@ export default function MyList(props) {
         .then(resp => {
             setList(resp.list)
             setListitems(resp.listitems)
-            console.log(resp)
         })
     }, [authUser]);
 
@@ -89,7 +88,7 @@ export default function MyList(props) {
                                 <div className="scroll-container">
                                 {listitems.map((item, index) => {
                                     return (
-                                        <div className="list-item">
+                                        <div key={item.id} className="list-item">
                                             <span>{item.description}</span>
                                             <span>{handleLink(index)}</span>
                                             <span><form><button id={item.id} onClick={handleEdit} className="edit">Edit</button></form></span>
