@@ -30,6 +30,7 @@ h1 {
     padding: 20px
 }
         #list-item-form input {
+            outline: none;
             height: 30px;
             margin: 5px 0;
         }
