@@ -86,16 +86,16 @@ export default function MyList(props) {
                                     <span>Delete</span>
                                 </div>
                                 <div className="scroll-container">
-                                {listitems.map((item, index) => {
-                                    return (
-                                        <div key={item.id} className="list-item">
-                                            <span>{item.description}</span>
-                                            <span>{handleLink(index)}</span>
-                                            <span><form><button id={item.id} onClick={handleEdit} className="edit">Edit</button></form></span>
-                                            <span><form><button className="delete" id={item.id} onClick={handleDelete} type="submit">Delete</button></form></span>
-                                        </div>
-                                    )
-                                })}
+                                    {listitems.map((item, index) => {
+                                        return (
+                                            <div key={item.id} className="list-item">
+                                                <span>{item.description}</span>
+                                                <span>{handleLink(index)}</span>
+                                                <span><form><button id={item.id} onClick={handleEdit} className="edit">Edit</button></form></span>
+                                                <span><form><button className="delete" id={item.id} onClick={handleDelete} type="submit">Delete</button></form></span>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         )

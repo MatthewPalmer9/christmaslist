@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '../services/api.js';
+import '../styles/showlist.css';
 
 export default function TestPage(props) {
 
@@ -35,26 +36,26 @@ export default function TestPage(props) {
                             <h1>{user} has nothing in their list.</h1>
                         </>
                     ) : (
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Description</th>
-                                        <th>Order Online</th>
-                                    </tr>
-                                </tbody>
+                        <div className="user-list-container1">
+                            <div className="list-container1">
+                                <h3>My list</h3>
+                                <div className="hr"></div>
+                                <div className="column-titles1">
+                                    <span>Description</span>
+                                    <span>Order Online</span>
+                                </div>
+                                <div className="scroll-container1">
                                     {list.map((item, index) => {
                                         return (
-                                            <tbody key={item.id}>
-                                                <tr>
-                                                    <td>{list[index].description}</td>
-                                                    <td>
-                                                        {handleLink(index)}           
-                                                    </td>
-                                                </tr>
-                                            </tbody>
+                                            <div key={item.id} className="list-item1">
+                                                <span>{item.description}</span>
+                                                <span>{handleLink(index)}</span>
+                                            </div>
                                         )
                                     })}
-                            </table>
+                                </div>
+                            </div>
+                        </div>
                         )
                     }
         </div>
