@@ -30,10 +30,10 @@ export default function TestPage(props) {
 
     return (
         <div>
-            <h1>{user}'s JollyList</h1>
+            <h1 className="show-h1">{user}'s JollyList</h1>
             {list.length === 0 ? (
                         <>
-                            <h1>{user} has nothing in their list.</h1>
+                            <h1 className="show-h1">{user} has nothing in their list.</h1>
                         </>
                     ) : (
                         <div className="user-list-container1">

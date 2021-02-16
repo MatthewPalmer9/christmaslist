@@ -26,12 +26,33 @@ h1 {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     color: white;
-    width: 200px;
+    width: 350px !important;
     padding: 20px
 }
-        #list-item-form button {
-            margin-top: 10px;
+        #list-item-form input {
+            height: 30px;
+            margin: 5px 0;
         }
+
+        #list-item-form label {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        #list-item-form button {
+            outline: none;
+            margin-top: 10px;
+            height: 40px;
+            font-weight: bold;
+            border-radius: 3px;
+            border: none;
+            background-color: rgb(45, 163, 108);
+            transition: 300ms;
+        }
+                #list-item-form button:hover {
+                    cursor: pointer;
+                    box-shadow: 0 0 0 5px rgba(45, 163, 108, 0.5);
+                }
 
 .list-item .edit {
     outline: none;
@@ -132,10 +153,6 @@ h1 {
     height: 80%;
     /* box-sizing: content-box; */
 }
-    .list-container .list-item span:nth-of-type(1)::-webkit-scrollbar {
-        /* display: none; */
-        
-    }
 
 .scroll-container {
     overflow-y: scroll;

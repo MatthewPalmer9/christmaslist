@@ -2,10 +2,10 @@ body {
     background-color: rgb(197, 197, 197);
 }
 
-h1 {
+h1.show-h1 {
     text-align: center;
     margin: 0;
-    padding-top: 150px;
+    padding-top: 120px;
     padding-bottom: 20px;
 }
 

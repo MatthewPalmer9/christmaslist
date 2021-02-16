@@ -45,7 +45,7 @@ export default function MyListEdit(props) {
     const handleSubmit = () => {
         api.list.editListItem({list: {id: listID, description: description, url: url}})
         .then(resp => console.log(resp))
-        history.push("/mylist")
+        .then( setTimeout(() => {history.push("/mylist")}, 500) )
     }
 
     return (
